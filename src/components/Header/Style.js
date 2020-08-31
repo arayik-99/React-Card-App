@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const HeaderStyle = styled.div`
+export const Style = styled.div`
   background-color: rgb(58, 58, 58);
   border: 1px solid black;
   border-left: none;
@@ -9,4 +8,3 @@ const HeaderStyle = styled.div`
   display: flex;
   justify-content: space-around;
 `;
-export default HeaderStyle;

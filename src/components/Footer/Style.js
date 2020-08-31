@@ -1,7 +1,6 @@
-import React from 'react';
 import styled from 'styled-components';
 
-const FooterStyle = styled.div`
+export const Style = styled.div`
   border: 1px solid black;
   border-left: none;
   border-right: none;
@@ -9,5 +8,3 @@ const FooterStyle = styled.div`
   text-align: center;
   color: rgb(255, 255, 255);
 `;
-
-export default FooterStyle;

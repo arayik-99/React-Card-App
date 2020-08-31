@@ -1,5 +1,5 @@
 import React from 'react';
-import InstructionStyle from './InstructionStyle';
+import {Style} from './Style';
 
 const text = `Instructions: Please create a responsive React application (using
     javascript or typescript) that displays a list of cards on a page as shown
@@ -23,7 +23,7 @@ const text = `Instructions: Please create a responsive React application (using
     the 'sort cards' button at the top of the page, please sort the cards in
     order of the number that is shown in the center of each card.`;
 const Instruction = () => {
-  return <InstructionStyle>{text}</InstructionStyle>;
+  return <Style>{text}</Style>;
 };
 
 export default Instruction;

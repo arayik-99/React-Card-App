@@ -1,14 +1,14 @@
 import React from 'react';
 import Card from '../Card/Card';
-import MainStyle from './MainStyle';
+import {Style} from './Style';
 
 const Main = ({ cards, removeCard }) => {
   return (
-    <MainStyle>
+    <Style>
       {cards.map((card, index) => (
         <Card id={index} rand={card.randNum} removeCard={removeCard} />
       ))}
-    </MainStyle>
+    </Style>
   );
 };
 

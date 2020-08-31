@@ -3,12 +3,35 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Main from './components/Main/Main';
 import Instruction from './components/Instruction/Instruction';
-import AppStyle from './components/Sides/AppStyle';
-import Left from './components/Sides/Left';
-import Right from './components/Sides/Right';
-import Root from './components/Sides/Root';
 
+import styled from 'styled-components';
 import './app.scss';
+
+const Container = styled.div`
+  display: flex;
+  flex: 0.2;
+  border: 1px solid black;
+  height: 100%;
+`;
+
+const Left = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 0.8;
+  justify-content: space-between;
+  border-left: 1px solid black;
+`;
+
+const Right = styled.div`
+  display: flex;
+  flex: 0.2;
+  border: 1px solid black;
+  height: 100%;
+`;
+
+const Root = styled.div`
+  height: 99vh;
+`;
 
 function App() {
   const [cards, setCards] = useState([]);
@@ -38,7 +61,7 @@ function App() {
 
   return (
     <Root>
-      <AppStyle>
+      <Container>
         <Left>
           <Header addCard={addCard} sortCards={sortCards} />
           <Main cards={cards} removeCard={removeCard} />
@@ -47,7 +70,7 @@ function App() {
         <Right>
           <Instruction />
         </Right>
-      </AppStyle>
+      </Container>
     </Root>
   );
 }
