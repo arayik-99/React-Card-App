@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Style = styled.div`
+export const Instruction = styled.div`
   font-weight: 600;
   text-align: center;
   padding-top: 70px;

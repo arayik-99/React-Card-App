@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Style = styled.div`
+export const Card = styled.div`
   background-color: rgb(99, 128, 175);
   display: flex;
   align-items: center;
@@ -12,14 +12,13 @@ export const Style = styled.div`
   height: 120px;
 `;
 
-export const Button = styled.div`
-  button{
-    background-color: rgb(187, 168, 93);
-    border: 1px solid black;
-  }
-  button:hover {
+export const Button = styled.button`
+  background-color: ${(props) => props.variant === 'red' ? 'red' : 'blue' };
+  // background-color: rgb(187, 168, 93);
+  border: 1px solid black;
+  
+  &:hover {
     background-color: rgb(177, 0, 0);
     cursor:pointer;
-    
   }
 `;

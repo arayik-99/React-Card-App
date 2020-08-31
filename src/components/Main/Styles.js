@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const Style = styled.div`
+export const Container = styled.div`
   height: 100%;
   overflow: scroll;
   overflow-x: hidden;

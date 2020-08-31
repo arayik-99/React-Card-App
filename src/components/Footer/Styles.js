@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Style = styled.div`
+export const Footer = styled.div`
   border: 1px solid black;
   border-left: none;
   border-right: none;

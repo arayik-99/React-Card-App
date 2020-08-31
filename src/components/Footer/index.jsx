@@ -1,11 +1,11 @@
 import React from 'react';
-import { Style } from './Style';
+import { Footer as FooterStyled } from './Styles';
 
 const Footer = () => {
   return (
-    <Style>
+    <FooterStyled>
       <h3>Footer</h3>
-    </Style>
+    </FooterStyled>
   );
 };
 

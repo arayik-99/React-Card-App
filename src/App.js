@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import Main from './components/Main/Main';
-import Instruction from './components/Instruction/Instruction';
+import React, { useState, useCallback } from 'react';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Main from './components/Main';
+import Instruction from './components/Instruction';
 
 import styled from 'styled-components';
 import './app.scss';
@@ -33,31 +33,31 @@ const Root = styled.div`
   height: 99vh;
 `;
 
-function App() {
+const App = () => {
   const [cards, setCards] = useState([]);
   const rand = Math.floor(Math.random() * 101);
 
-  function addCard() {
-    setCards((prevCards) => {
-      return [...prevCards, { id: cards.length + 1, randNum: rand }];
-    });
-  }
+  const addCard = () => {
+    setCards([...cards, { id: cards.length + 1, number: rand }]);
+  };
 
-  function sortCards() {
-    cards.sort((a, b) => {
-      return a.randNum - b.randNum;
-    });
-    setCards([...cards]);
-  }
+  const sortCards = useCallback(
+    (a, b) => {
+      cards.sort((a, b) => {
+        return a.number - b.number;
+      });
+      setCards([...cards]);
+    },
+    [cards]
+  );
 
-  function removeCard(id) {
-    cards.forEach((card, index) => {
-      if (index === id) {
-        cards.splice(index, 1);
-      }
-    });
-    setCards([...cards]);
-  }
+  const removeCard = useCallback(
+    (id) => {
+      cards.splice(id, 1);
+      setCards([...cards]);
+    },
+    [cards]
+  );
 
   return (
     <Root>
@@ -73,6 +73,6 @@ function App() {
       </Container>
     </Root>
   );
-}
+};
 
 export default App;
