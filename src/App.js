@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import Main from './components/Main/Main';
+import Instruction from './components/Instruction/Instruction';
+
+import './app.scss';
 
 function App() {
+  const [cards, setCards] = useState([]);
+  const rand = Math.floor(Math.random() * 101);
+
+  function addCard() {
+    setCards((prevCards) => {
+      return [...prevCards, rand];
+    });
+  }
+
+  function sortCards() {
+    cards.sort((a, b) => a - b);
+    const newArr = [...cards];
+    setCards(newArr);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app'>
+      <div className='left'>
+        <Header addCard={addCard} sortCards={sortCards} />
+        <Main cards={cards} />
+        <Footer />
+      </div>
+      <div className='right'>
+        <Instruction />
+      </div>
     </div>
   );
 }
