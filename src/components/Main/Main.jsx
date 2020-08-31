@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Card from '../Card/Card';
+import MainStyle from './MainStyle';
 
-import './main.scss';
-
-const Main = ({ cards }) => {
+const Main = ({ cards, removeCard }) => {
   return (
-    <div className='main'>
-      {cards.map((card) => (
-        <Card rand={card} />
+    <MainStyle>
+      {cards.map((card, index) => (
+        <Card id={index} rand={card.randNum} removeCard={removeCard} />
       ))}
-    </div>
+    </MainStyle>
   );
 };
 

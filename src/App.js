@@ -3,6 +3,10 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Main from './components/Main/Main';
 import Instruction from './components/Instruction/Instruction';
+import AppStyle from './components/Sides/AppStyle';
+import Left from './components/Sides/Left';
+import Right from './components/Sides/Right';
+import Root from './components/Sides/Root';
 
 import './app.scss';
 
@@ -12,27 +16,39 @@ function App() {
 
   function addCard() {
     setCards((prevCards) => {
-      return [...prevCards, rand];
+      return [...prevCards, { id: cards.length + 1, randNum: rand }];
     });
   }
 
   function sortCards() {
-    cards.sort((a, b) => a - b);
-    const newArr = [...cards];
-    setCards(newArr);
+    cards.sort((a, b) => {
+      return a.randNum - b.randNum;
+    });
+    setCards([...cards]);
+  }
+
+  function removeCard(id) {
+    cards.forEach((card, index) => {
+      if (index === id) {
+        cards.splice(index, 1);
+      }
+    });
+    setCards([...cards]);
   }
 
   return (
-    <div className='app'>
-      <div className='left'>
-        <Header addCard={addCard} sortCards={sortCards} />
-        <Main cards={cards} />
-        <Footer />
-      </div>
-      <div className='right'>
-        <Instruction />
-      </div>
-    </div>
+    <Root>
+      <AppStyle>
+        <Left>
+          <Header addCard={addCard} sortCards={sortCards} />
+          <Main cards={cards} removeCard={removeCard} />
+          <Footer />
+        </Left>
+        <Right>
+          <Instruction />
+        </Right>
+      </AppStyle>
+    </Root>
   );
 }
 

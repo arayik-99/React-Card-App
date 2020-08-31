@@ -1,16 +1,16 @@
 import React from 'react';
-import './header.scss';
+import HeaderStyle from './HeaderStyle';
 
-const Header = ({ addCard, sortCards }) => {
+const Header = ({ addCard, sortCards, removeCard }) => {
   return (
-    <div className='header'>
+    <HeaderStyle>
       <button onClick={addCard}>
         <h2>Add Card</h2>
       </button>
       <button onClick={sortCards}>
         <h2>Sort Cards</h2>
       </button>
-    </div>
+    </HeaderStyle>
   );
 };
 
