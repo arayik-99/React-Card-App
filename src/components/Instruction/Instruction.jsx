@@ -1,5 +1,5 @@
 import React from 'react';
-import {Style} from './Style';
+import { Style } from './Style';
 
 const text = `Instructions: Please create a responsive React application (using
     javascript or typescript) that displays a list of cards on a page as shown

@@ -1,15 +1,13 @@
 import React from 'react';
-import { Style } from './Style';
-
-import '../Card/card.scss';
+import { Style, Button } from './Style';
 
 const Card = ({ rand, removeCard, id }) => {
   return (
     <Style>
       <h1>{rand}</h1>
-      <div className='button'>
+      <Button>
         <button onClick={() => removeCard(id)}>X</button>
-      </div>
+      </Button>
     </Style>
   );
 };

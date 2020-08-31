@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
-import {Style} from './Style';
+import { Style } from './Style';
 
 const Main = ({ cards, removeCard }) => {
   return (
